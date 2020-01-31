@@ -1759,7 +1759,7 @@ body.is-preload #header .content .inner {
     opacity 0.325s ease-in-out;
   width: 100%;
   max-width: 100%;
-  margin-top: 2rem;
+  margin-top: 0rem;
   text-align: center;
 }
 
