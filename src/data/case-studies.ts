@@ -46,7 +46,7 @@ export const caseStudies: CaseStudy[] = [
     metrics: [
       { label: "Engagement Lift", value: "+15%" },
       { label: "TAM Expansion", value: "+35%" },
-      { label: "FTEs in Dogfood", value: "1.6K" },
+      { label: "Global Reach", value: "490M MAU" },
     ],
     tags: ["GenAI", "Engagement", "Global Scale"],
     sections: {

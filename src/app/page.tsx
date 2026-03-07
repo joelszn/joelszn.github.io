@@ -7,7 +7,7 @@ import { caseStudies } from "@/data/case-studies";
 
 export default function Home() {
   return (
-    <main>
+    <main id="main-content">
       <Hero />
 
       <section id="work" className="py-24 md:py-32">

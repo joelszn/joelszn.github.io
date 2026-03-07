@@ -1,15 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { pressItems, type PressItem } from "@/data/press";
+import { pressItems, typeLabels, type PressItem } from "@/data/press";
 import PressDrawer from "@/components/PressDrawer";
-
-const typeLabels: Record<string, string> = {
-  article: "Article",
-  podcast: "Podcast",
-  book: "Book",
-  mention: "Mention",
-};
+import Icon from "@/components/Icon";
 
 export default function PressSection() {
   const [selected, setSelected] = useState<PressItem | null>(null);
@@ -19,7 +13,7 @@ export default function PressSection() {
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
         {pressItems.map((item) => (
           <button
-            key={item.publication + item.title}
+            key={item.id}
             onClick={() => setSelected(item)}
             className="group rounded-lg border border-border bg-surface p-5 text-left transition-all hover:border-accent/50"
           >
@@ -32,15 +26,7 @@ export default function PressSection() {
             <p className="mt-1 text-sm text-muted">{item.title}</p>
             <p className="mt-4 inline-flex items-center gap-1 text-xs text-accent opacity-0 transition-opacity group-hover:opacity-100">
               {item.type === "podcast" ? "Listen" : "Read more"}
-              <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
-                <path
-                  d="M3 8h10m0 0l-4-4m4 4l-4 4"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <Icon name="arrowRight" size={12} />
             </p>
           </button>
         ))}
