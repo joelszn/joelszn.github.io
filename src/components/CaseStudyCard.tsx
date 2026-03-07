@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { CaseStudy } from "@/data/case-studies";
+import Icon from "@/components/Icon";
 
 export default function CaseStudyCard({ study }: { study: CaseStudy }) {
   return (
@@ -11,6 +12,9 @@ export default function CaseStudyCard({ study }: { study: CaseStudy }) {
         <img
           src={study.image}
           alt={`${study.title} product screenshot`}
+          width={640}
+          height={360}
+          loading="lazy"
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </div>
@@ -43,21 +47,10 @@ export default function CaseStudyCard({ study }: { study: CaseStudy }) {
         {/* mt-auto pushes this to the bottom of both cards regardless of content height */}
         <p className="mt-auto pt-6 inline-flex items-center gap-1 text-sm text-accent transition-colors group-hover:text-accent-hover">
           Read case study
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
+          <Icon
+            name="chevronRight"
             className="transition-transform group-hover:translate-x-1"
-          >
-            <path
-              d="M6 3l5 5-5 5"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          />
         </p>
       </div>
     </Link>

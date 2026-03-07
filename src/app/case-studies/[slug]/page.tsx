@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { caseStudies } from "@/data/case-studies";
+import Icon from "@/components/Icon";
 
 export function generateStaticParams() {
   return caseStudies.map((cs) => ({ slug: cs.slug }));
@@ -34,21 +35,13 @@ export default async function CaseStudyPage({
   const nextStudy = caseStudies[(currentIndex + 1) % caseStudies.length];
 
   return (
-    <main className="pt-24 pb-24 md:pb-32">
+    <main id="main-content" className="pt-24 pb-24 md:pb-32">
       <div className="mx-auto max-w-3xl px-6">
         <Link
           href="/#work"
           className="inline-flex items-center gap-1 text-sm text-muted transition-colors hover:text-foreground"
         >
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path
-              d="M10 3l-5 5 5 5"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <Icon name="chevronLeft" />
           Back to home
         </Link>
 
@@ -73,6 +66,8 @@ export default async function CaseStudyPage({
           <img
             src={study.image}
             alt={`${study.title} product screenshot`}
+            width={768}
+            height={432}
             className="w-full object-cover"
           />
         </div>
@@ -125,21 +120,11 @@ export default async function CaseStudyPage({
               className="group mt-2 inline-flex items-center gap-2 text-xl font-semibold text-foreground transition-colors hover:text-accent"
             >
               {nextStudy.title}
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 16 16"
-                fill="none"
+              <Icon
+                name="arrowRight"
+                size={20}
                 className="transition-transform group-hover:translate-x-1"
-              >
-                <path
-                  d="M3 8h10m0 0l-4-4m4 4l-4 4"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              />
             </Link>
           </div>
         )}

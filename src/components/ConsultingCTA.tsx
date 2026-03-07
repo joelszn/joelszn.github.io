@@ -1,3 +1,5 @@
+import Icon from "@/components/Icon";
+
 export default function ConsultingCTA() {
   return (
     <section id="contact" className="py-24 md:py-32">
@@ -19,20 +21,7 @@ export default function ConsultingCTA() {
             className="mt-6 inline-flex items-center gap-2 text-accent transition-colors hover:text-accent-hover"
           >
             Get in touch
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-            >
-              <path
-                d="M3 8h10m0 0l-4-4m4 4l-4 4"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            <Icon name="arrowRight" />
           </a>
         </div>
       </div>

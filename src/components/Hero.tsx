@@ -1,3 +1,5 @@
+import Icon from "@/components/Icon";
+
 export default function Hero() {
   return (
     <section className="flex min-h-screen items-center px-6">
@@ -22,21 +24,7 @@ export default function Hero() {
             className="mt-10 inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-foreground"
           >
             View my work
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              className="animate-bounce"
-            >
-              <path
-                d="M8 3v10m0 0l-4-4m4 4l4-4"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            <Icon name="arrowDown" className="animate-bounce" />
           </a>
         </div>
 
@@ -46,6 +34,8 @@ export default function Hero() {
             <img
               src="/images/headshot.jpg"
               alt="Joel Duran"
+              width={256}
+              height={256}
               className="h-full w-full object-cover object-top"
             />
           </div>
