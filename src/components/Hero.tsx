@@ -2,8 +2,8 @@ import Icon from "@/components/Icon";
 
 export default function Hero() {
   return (
-    <section className="flex min-h-screen items-center px-6">
-      <div className="mx-auto flex w-full max-w-4xl flex-col-reverse items-center gap-12 md:flex-row md:items-center md:justify-between">
+    <section className="flex min-h-dvh items-center px-6">
+      <div className="mx-auto flex w-full max-w-4xl flex-col-reverse items-center gap-8 md:flex-row md:gap-12 md:items-center md:justify-between">
         {/* Text */}
         <div className="flex-1">
           <h1 className="text-5xl font-bold tracking-tight text-foreground md:text-7xl">
@@ -13,9 +13,7 @@ export default function Hero() {
             I build AI products people actually use.
           </p>
           <p className="mt-6 max-w-md text-base leading-relaxed text-muted">
-            From launching AI experiences at Microsoft to building agentic AI at
-            WebMD — I focus on turning ambitious ideas into usable, trusted
-            products at scale.
+            From Microsoft to WebMD — I turn ambitious ideas into usable, trusted products.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a
@@ -44,7 +42,7 @@ export default function Hero() {
         </div>
 
         {/* Photo */}
-        <div className="w-48 shrink-0 md:w-64">
+        <div className="w-40 shrink-0 md:w-64">
           <div className="overflow-hidden rounded-2xl border border-border">
             <img
               src="/images/headshot.jpg"

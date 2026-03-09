@@ -18,7 +18,7 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section className="py-24 md:py-32">
+    <section className="py-16 md:py-24">
       <div className="mx-auto max-w-4xl px-6">
         <p className="text-sm uppercase tracking-widest text-muted">
           Where I Add the Most Value
