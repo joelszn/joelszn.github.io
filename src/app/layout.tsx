@@ -10,26 +10,43 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://joelduran.com"),
   title: "Joel Duran — AI Product Manager",
   description:
-    "AI Product Manager with 5+ years building intelligent products at scale. Previously shipping Copilot & Recall at Microsoft.",
+    "AI Product Manager who built Copilot and Recall at Microsoft and is now shipping agentic AI at WebMD. 490M+ users across products.",
   openGraph: {
     title: "Joel Duran — AI Product Manager",
     description:
-      "AI Product Manager with 5+ years building intelligent products at scale. Previously shipping Copilot & Recall at Microsoft.",
+      "AI Product Manager who built Copilot and Recall at Microsoft and is now shipping agentic AI at WebMD. 490M+ users across products.",
     url: "https://joelduran.com",
     siteName: "Joel Duran",
     locale: "en_US",
     type: "website",
-    images: [{ url: "https://joelduran.com/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Joel Duran — AI Product Manager",
     description:
-      "AI Product Manager with 5+ years building intelligent products at scale. Previously shipping Copilot & Recall at Microsoft.",
-    images: ["https://joelduran.com/og-image.png"],
+      "AI Product Manager who built Copilot and Recall at Microsoft and is now shipping agentic AI at WebMD. 490M+ users across products.",
+    images: ["/og-image.png"],
   },
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Joel Duran",
+  jobTitle: "AI Product Manager",
+  worksFor: {
+    "@type": "Organization",
+    name: "WebMD",
+  },
+  url: "https://joelduran.com",
+  sameAs: [
+    "https://www.linkedin.com/in/joeldabr/",
+    "https://github.com/joelszn",
+  ],
 };
 
 export default function RootLayout({
@@ -39,6 +56,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+      </head>
       <body className={`${inter.variable} antialiased`}>
         <a
           href="#main-content"

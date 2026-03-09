@@ -19,6 +19,11 @@ export async function generateMetadata({
   return {
     title: `${study.title} — Joel Duran`,
     description: study.cardDescription,
+    openGraph: {
+      title: `${study.title} — Joel Duran`,
+      description: study.cardDescription,
+      images: [{ url: study.image, width: 1280, height: 720 }],
+    },
   };
 }
 
@@ -34,8 +39,26 @@ export default async function CaseStudyPage({
   const currentIndex = caseStudies.findIndex((cs) => cs.slug === slug);
   const nextStudy = caseStudies[(currentIndex + 1) % caseStudies.length];
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: study.title,
+    description: study.cardDescription,
+    author: {
+      "@type": "Person",
+      name: "Joel Duran",
+      url: "https://joelduran.com",
+    },
+    image: `https://joelduran.com${study.image}`,
+    url: `https://joelduran.com/case-studies/${study.slug}`,
+  };
+
   return (
     <main id="main-content" className="pt-24 pb-24 md:pb-32">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <div className="mx-auto max-w-3xl px-6">
         <Link
           href="/#work"
@@ -68,6 +91,7 @@ export default async function CaseStudyPage({
             alt={`${study.title} product screenshot`}
             width={768}
             height={432}
+            fetchPriority="high"
             className="w-full object-cover"
           />
         </div>
@@ -112,8 +136,28 @@ export default async function CaseStudyPage({
           </section>
         </article>
 
+        {/* Inline CTA */}
+        <div className="mt-16 rounded-lg border border-border bg-surface p-8">
+          <p className="text-sm uppercase tracking-widest text-muted">
+            Open to Engagements
+          </p>
+          <h2 className="mt-3 text-xl font-semibold tracking-tight text-foreground">
+            Interested in working together?
+          </h2>
+          <p className="mt-3 text-sm leading-relaxed text-muted">
+            I help teams define and ship AI products. Strategy, specs, execution.
+          </p>
+          <a
+            href="mailto:duranjoel.a@gmail.com"
+            className="mt-4 inline-flex items-center gap-2 text-accent transition-colors hover:text-accent-hover"
+          >
+            Start a conversation
+            <Icon name="arrowRight" />
+          </a>
+        </div>
+
         {nextStudy && nextStudy.slug !== study.slug && (
-          <div className="mt-24 border-t border-border pt-12">
+          <div className="mt-12 border-t border-border pt-12">
             <p className="text-sm text-muted">Next case study</p>
             <Link
               href={`/case-studies/${nextStudy.slug}`}

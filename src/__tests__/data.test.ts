@@ -1,6 +1,10 @@
 import { describe, it, expect } from "vitest";
+import { existsSync } from "fs";
+import { join } from "path";
 import { caseStudies } from "@/data/case-studies";
 import { pressItems, typeLabels } from "@/data/press";
+
+const publicDir = join(process.cwd(), "public");
 
 describe("case-studies data", () => {
   it("has at least one case study", () => {
@@ -37,6 +41,23 @@ describe("case-studies data", () => {
       expect(cs.image).toMatch(/^\//);
     }
   });
+
+  it("case study image files exist on disk", () => {
+    for (const cs of caseStudies) {
+      const filePath = join(publicDir, cs.image);
+      expect(existsSync(filePath), `Missing image: ${cs.image}`).toBe(true);
+    }
+  });
+
+  it("no empty strings in critical fields", () => {
+    for (const cs of caseStudies) {
+      expect(cs.title.trim()).not.toBe("");
+      expect(cs.cardDescription.trim()).not.toBe("");
+      expect(cs.sections.problem.trim()).not.toBe("");
+      expect(cs.sections.approach.trim()).not.toBe("");
+      expect(cs.sections.outcome.trim()).not.toBe("");
+    }
+  });
 });
 
 describe("press data", () => {
@@ -56,17 +77,43 @@ describe("press data", () => {
     }
   });
 
-  it("podcasts have embedUrl", () => {
+  it("podcasts have either embedUrl or audioUrl", () => {
     const podcasts = pressItems.filter((p) => p.type === "podcast");
     for (const p of podcasts) {
-      expect(p.embedUrl).toBeTruthy();
+      expect(
+        p.embedUrl || p.audioUrl,
+        `Podcast "${p.id}" has no embedUrl or audioUrl`
+      ).toBeTruthy();
     }
   });
 
-  it("embedUrls are Spotify embed URLs", () => {
+  it("podcasts with embedUrl have valid Spotify embed URLs", () => {
     for (const item of pressItems) {
-      if (item.embedUrl) {
+      if (item.embedUrl && item.embedUrl.includes("spotify")) {
         expect(item.embedUrl).toMatch(/^https:\/\/open\.spotify\.com\/embed\//);
+      }
+    }
+  });
+
+  it("all external URLs are well-formed https URLs", () => {
+    for (const item of pressItems) {
+      expect(item.url).toMatch(/^https?:\/\//);
+    }
+  });
+
+  it("audio files referenced in press data exist on disk", () => {
+    for (const item of pressItems) {
+      if (item.audioUrl) {
+        const filePath = join(publicDir, item.audioUrl);
+        expect(existsSync(filePath), `Missing audio: ${item.audioUrl}`).toBe(true);
+      }
+    }
+  });
+
+  it("YouTube embed URLs are well-formed", () => {
+    for (const item of pressItems) {
+      if (item.embedUrl && item.embedUrl.includes("youtube")) {
+        expect(item.embedUrl).toMatch(/^https:\/\/www\.youtube\.com\/embed\//);
       }
     }
   });

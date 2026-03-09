@@ -10,22 +10,38 @@ export default function Hero() {
             Joel Duran
           </h1>
           <p className="mt-4 text-xl font-light text-muted md:text-2xl">
-            AI Product Manager
+            I ship AI products at scale.
           </p>
           <p className="mt-6 max-w-md text-base leading-relaxed text-muted">
-            Building intelligent products at the intersection of AI and user
-            experience. Previously shipping{" "}
-            <span className="text-foreground">Copilot</span> &{" "}
+            From <span className="text-foreground">Copilot</span> and{" "}
             <span className="text-foreground">Recall</span> at Microsoft to
-            hundreds of millions of users.
+            building agentic AI at WebMD — I turn ambitious AI visions into
+            products millions of people use.
           </p>
-          <a
-            href="#work"
-            className="mt-10 inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-foreground"
-          >
-            View my work
-            <Icon name="arrowDown" className="animate-bounce" />
-          </a>
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <a
+              href="#work"
+              className="inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-foreground"
+            >
+              See my work
+              <Icon name="arrowDown" className="animate-bounce" />
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 rounded-md bg-accent px-4 py-2 text-sm font-medium text-background transition-colors hover:bg-accent-hover"
+            >
+              Let&apos;s talk
+            </a>
+            <a
+              href="https://www.linkedin.com/in/joeldabr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
+              className="text-muted transition-colors hover:text-foreground"
+            >
+              <Icon name="linkedin" size={20} />
+            </a>
+          </div>
         </div>
 
         {/* Photo */}
@@ -36,6 +52,7 @@ export default function Hero() {
               alt="Joel Duran"
               width={256}
               height={256}
+              fetchPriority="high"
               className="h-full w-full object-cover object-top"
             />
           </div>

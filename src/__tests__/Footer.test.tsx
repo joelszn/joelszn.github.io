@@ -6,7 +6,11 @@ describe("Footer", () => {
   it("renders copyright with current year", () => {
     render(<Footer />);
     const year = new Date().getFullYear();
-    expect(screen.getByText(`\u00A9 ${year} Joel Duran`)).toBeInTheDocument();
+    expect(
+      screen.getByText((content) =>
+        content.includes(`${year} Joel Duran`)
+      )
+    ).toBeInTheDocument();
   });
 
   it("renders email link", () => {

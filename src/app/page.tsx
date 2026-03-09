@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import ServicesSection from "@/components/ServicesSection";
 import SectionHeading from "@/components/SectionHeading";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import PressSection from "@/components/PressSection";
@@ -9,6 +10,7 @@ export default function Home() {
   return (
     <main id="main-content">
       <Hero />
+      <ServicesSection />
 
       <section id="work" className="py-24 md:py-32">
         <div className="mx-auto max-w-4xl px-6">
