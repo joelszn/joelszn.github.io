@@ -25,7 +25,11 @@ export default function Navigation() {
         }`}
       >
         <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
-          <Link href="/" className="text-sm font-medium text-foreground">
+          <Link
+            href="/"
+            className="text-sm font-medium text-foreground"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
             Joel Duran
           </Link>
           <div className="flex items-center gap-6">

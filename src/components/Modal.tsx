@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Icon from "@/components/Icon";
 
 export default function Modal({
   open,
@@ -64,6 +65,20 @@ export default function Modal({
         >
           {children}
         </div>
+      </div>
+      {/* External close affordance — visible in backdrop area */}
+      <div
+        className={`fixed top-4 right-4 z-[60] transition-opacity duration-300 ${
+          open ? "opacity-100" : "pointer-events-none opacity-0"
+        }`}
+      >
+        <button
+          onClick={onClose}
+          aria-label="Close"
+          className="rounded-full bg-surface p-2 text-muted shadow-lg transition-colors hover:text-foreground"
+        >
+          <Icon name="close" size={16} />
+        </button>
       </div>
     </>
   );
