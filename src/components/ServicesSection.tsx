@@ -1,18 +1,18 @@
 const services = [
   {
-    title: "AI Product Strategy",
+    title: "AI Product Definition",
     description:
-      "Roadmapping, PRDs, and go-to-market for AI-powered products. From opportunity sizing to launch.",
+      "I help teams shape the right AI product before they overbuild — from problem framing and roadmap decisions to launch planning.",
   },
   {
-    title: "0→1 AI Development",
+    title: "0 to 1 AI Launches",
     description:
-      "Taking AI features from concept to shipped product — user research, MVP scoping, and launch strategy.",
+      "I take AI features from concept to shipped experience through research, scoping, UX collaboration, and launch execution.",
   },
   {
-    title: "AI Adoption & Growth",
+    title: "Adoption & Product Growth",
     description:
-      "Increasing engagement, optimizing entry points, and driving cross-functional alignment to make AI features stick.",
+      "I improve how AI products are discovered, understood, and used — so they drive real engagement after launch.",
   },
 ];
 
@@ -21,7 +21,7 @@ export default function ServicesSection() {
     <section className="py-24 md:py-32">
       <div className="mx-auto max-w-4xl px-6">
         <p className="text-sm uppercase tracking-widest text-muted">
-          How I Can Help
+          Where I Add the Most Value
         </p>
         <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
           {services.map((service) => (

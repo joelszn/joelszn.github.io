@@ -10,27 +10,26 @@ export default function Hero() {
             Joel Duran
           </h1>
           <p className="mt-4 text-xl font-light text-muted md:text-2xl">
-            I ship AI products at scale.
+            I build AI products people actually use.
           </p>
           <p className="mt-6 max-w-md text-base leading-relaxed text-muted">
-            From <span className="text-foreground">Copilot</span> and{" "}
-            <span className="text-foreground">Recall</span> at Microsoft to
-            building agentic AI at WebMD — I turn ambitious AI visions into
-            products millions of people use.
+            From launching AI experiences at Microsoft to building agentic AI at
+            WebMD — I focus on turning ambitious ideas into usable, trusted
+            products at scale.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a
               href="#work"
               className="inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-foreground"
             >
-              See my work
+              View case studies
               <Icon name="arrowDown" className="animate-bounce" />
             </a>
             <a
               href="#contact"
               className="inline-flex items-center gap-2 rounded-md bg-accent px-4 py-2 text-sm font-medium text-background transition-colors hover:bg-accent-hover"
             >
-              Let&apos;s talk
+              Get in touch
             </a>
             <a
               href="https://www.linkedin.com/in/joeldabr/"

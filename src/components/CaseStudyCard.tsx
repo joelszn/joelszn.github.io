@@ -46,7 +46,7 @@ export default function CaseStudyCard({ study }: { study: CaseStudy }) {
         </div>
         {/* mt-auto pushes this to the bottom of both cards regardless of content height */}
         <p className="mt-auto pt-6 inline-flex items-center gap-1 text-sm text-accent transition-colors group-hover:text-accent-hover">
-          Read case study
+          View case study
           <Icon
             name="chevronRight"
             className="transition-transform group-hover:translate-x-1"

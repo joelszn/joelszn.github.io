@@ -56,7 +56,7 @@ export default function Modal({
         aria-labelledby={labelId}
         tabIndex={-1}
         ref={containerRef}
-        className={`fixed inset-0 z-50 flex items-center justify-center p-4 outline-none transition-all duration-300 ${
+        className={`fixed inset-0 z-50 flex items-center justify-center p-0 sm:p-4 outline-none transition-all duration-300 ${
           open ? "opacity-100 scale-100" : "pointer-events-none opacity-0 scale-95"
         }`}
       >

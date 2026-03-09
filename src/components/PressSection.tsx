@@ -25,7 +25,11 @@ export default function PressSection() {
             </p>
             <p className="mt-1 text-sm text-muted">{item.title}</p>
             <p className="mt-4 inline-flex items-center gap-1 text-xs text-accent opacity-0 transition-opacity group-hover:opacity-100">
-              {item.type === "podcast" ? "Listen" : "Read more"}
+              {item.type === "podcast"
+                ? "Listen to episode"
+                : item.type === "video"
+                  ? "Watch"
+                  : "Read article"}
               <Icon name="arrowRight" size={12} />
             </p>
           </button>

@@ -65,7 +65,7 @@ export default function Navigation() {
         open={resumeOpen}
         onClose={() => setResumeOpen(false)}
         labelId="resume-modal-title"
-        cardClassName="max-w-3xl h-[90vh]"
+        cardClassName="w-full h-dvh rounded-none sm:max-w-3xl sm:h-[90vh] sm:rounded-xl"
       >
         {/* Header */}
         <div className="flex items-center justify-between border-b border-border px-6 py-4">
@@ -80,6 +80,15 @@ export default function Navigation() {
             >
               Download
               <Icon name="download" size={14} />
+            </a>
+            <a
+              href="/resume/JOELDURAN_RESUME.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-foreground"
+            >
+              Open
+              <Icon name="external" size={14} />
             </a>
             <button
               onClick={() => setResumeOpen(false)}

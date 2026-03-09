@@ -6,22 +6,21 @@ export default function ConsultingCTA() {
       <div className="mx-auto max-w-4xl px-6">
         <div className="rounded-lg border border-border bg-surface p-8 md:p-12">
           <p className="text-sm uppercase tracking-widest text-muted">
-            Open to Engagements
+            Open to Select Opportunities
           </p>
           <h2 className="mt-3 text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
-            I help teams ship AI products that actually work.
+            I help teams define, launch, and grow AI products.
           </h2>
           <p className="mt-4 max-w-lg text-base leading-relaxed text-muted">
-            From zero-to-one product definition to scaling AI features to
-            hundreds of millions of users — I bring the playbook from Microsoft
-            and WebMD to your team. Strategy, specs, execution.
+            I bring experience across AI product strategy, launch execution, and
+            product adoption — shaped by work at Microsoft and now WebMD.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-4">
             <a
               href="mailto:duranjoel.a@gmail.com"
               className="inline-flex items-center gap-2 text-accent transition-colors hover:text-accent-hover"
             >
-              Start a conversation
+              Get in touch
               <Icon name="arrowRight" />
             </a>
             <a
