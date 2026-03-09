@@ -8,8 +8,10 @@ import Icon from "@/components/Icon";
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [resumeOpen, setResumeOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    setIsMobile(window.innerWidth < 640);
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -52,7 +54,13 @@ export default function Navigation() {
               Contact
             </a>
             <button
-              onClick={() => setResumeOpen(true)}
+              onClick={() => {
+                if (isMobile) {
+                  window.open("/resume/JOELDURAN_RESUME.pdf", "_blank", "noopener,noreferrer");
+                } else {
+                  setResumeOpen(true);
+                }
+              }}
               className="text-sm text-muted transition-colors hover:text-foreground"
             >
               Resume
