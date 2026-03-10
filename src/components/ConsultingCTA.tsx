@@ -5,9 +5,6 @@ export default function ConsultingCTA() {
     <section id="contact" className="py-24 md:py-32">
       <div className="mx-auto max-w-4xl px-6">
         <div className="rounded-lg border border-border bg-surface p-8 md:p-12">
-          <p className="text-sm uppercase tracking-widest text-muted">
-            Open to Select Opportunities
-          </p>
           <h2 className="mt-3 text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
             I help teams define, launch, and grow AI products.
           </h2>
