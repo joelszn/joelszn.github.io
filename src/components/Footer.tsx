@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="border-t border-border py-12">
       <div className="mx-auto max-w-4xl px-6">
         <p className="mb-6 text-center text-sm text-muted">
-          For product roles, consulting, speaking, or collaborations — reach out here.
+          For product consulting, speaking engagements, or collaborations - reach out here.
         </p>
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-sm text-muted">
